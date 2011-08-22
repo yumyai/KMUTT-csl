@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?oxygen RNGSchema="http://xbiblio.svn.sourceforge.net/viewvc/*checkout*/xbiblio/csl/schema/trunk/csl.rnc" type="compact"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" xml:lang="en">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="thesis" xml:lang="en">
   <info>
     <title>KMUTT_BETA</title>
     <id>http://www.zotero.org/styles/kmutt</id>
@@ -12,7 +10,7 @@
     <category term="engineering"/>
     <category term="generic-base"/>
     <category term="biology"/>
-    <updated>2010-10-14T06:35:40+00:00</updated>
+    <updated>2011-08-22T06:35:40+00:00</updated>
     <link href="manual for citation style is in pdf" rel="documentation"/>
   </info>
   <macro name="author">
@@ -112,19 +110,17 @@
       </group>
     </layout>
   </citation>
-  <bibliography>
-    <option name="entry-spacing" value="1"/>
+  <bibliography hanging-indent="true" second-field-align="flush">
     <sort>
       <key macro="author"/>
       <key macro="issued-year" sort="ascending"/>
     </sort>
     <layout suffix=".">
-      <group delimiter=", " suffix=", ">
-        <text macro="author"/>
-        <date variable="issued">
+        <text variable="citation-number" suffix=". "/>
+        <text macro="author" suffix=", "/>
+        <date variable="issued" suffix=", ">
           <date-part name="year"/>
         </date>
-      </group>
       <choose>
         <if type="book">
           <group delimiter=", ">
