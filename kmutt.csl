@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?oxygen RNGSchema="http://xbiblio.svn.sourceforge.net/viewvc/*checkout*/xbiblio/csl/schema/trunk/csl.rnc" type="compact"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" xml:lang="en">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="thesis" version="1.0" xml:lang="en">
   <info>
     <title>KMUTT_BETA</title>
     <id>http://www.zotero.org/styles/kmutt</id>
@@ -12,7 +10,7 @@
     <category term="engineering"/>
     <category term="generic-base"/>
     <category term="biology"/>
-    <updated>2010-10-14T06:35:40+00:00</updated>
+    <updated>2011-08-23T06:35:40+00:00</updated>
     <link href="manual for citation style is in pdf" rel="documentation"/>
   </info>
   <macro name="author">
@@ -74,9 +72,7 @@
   <macro name="publisher">
     <text variable="publisher-place" suffix=": " prefix=" "/>
     <text variable="publisher" suffix=", "/>
-    <date variable="issued">
-      <date-part name="year"/>
-    </date>
+    <!--<text macro="issued-year"/>-->
   </macro>
   
   <macro name="access">
@@ -88,13 +84,7 @@
       <text variable="page" />
     </group>
   </macro>
-  <citation>
-    <option name="collapse" value="year-suffix"/>
-    <option name="et-al-min" value="3"/>
-    <option name="et-al-use-first" value="1"/>
-    <option name="et-al-subsequent-min" value="3"/>
-    <option name="et-al-subsequent-use-first" value="1"/>
-    <option name="disambiguate-add-year-suffix" value="true"/>
+  <citation collapse="year-suffix" et-al-min="3" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true">
     <sort>
       <key variable="issued"/>
       <key variable="author"/>
@@ -102,9 +92,7 @@
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=", ">
         <text macro="author-short"/>
-        <date variable="issued" >
-          <date-part name="year"/>
-        </date>
+	<text macro="issued-year"/>
         <group>
           <label variable="locator" suffix="." form="short"/>
           <text variable="locator" prefix=" "/>
@@ -112,19 +100,15 @@
       </group>
     </layout>
   </citation>
-  <bibliography>
-    <option name="entry-spacing" value="1"/>
+  <bibliography entry-spacing="1" hanging-indent="true" second-field-align="flush">
     <sort>
       <key macro="author"/>
       <key macro="issued-year" sort="ascending"/>
     </sort>
     <layout suffix=".">
-      <group delimiter=", " suffix=", ">
-        <text macro="author"/>
-        <date variable="issued">
-          <date-part name="year"/>
-        </date>
-      </group>
+        <text variable="citation-number" suffix=". "/>
+        <text macro="author" suffix=", "/>
+	<text macro="issued-year" suffix=", "/>
       <choose>
         <if type="book">
           <group delimiter=", ">
@@ -155,9 +139,7 @@
             <text macro="title"/>
             <text variable="genre"/>
             <text variable="publisher"/>
-            <date variable="issued">
-              <date-part name="year"/>
-            </date>
+	    <text macro="issued-year"/>
           </group>   
         </else-if>
         <else>
@@ -165,10 +147,10 @@
             <text macro="title"/>
             <text variable="container-title" font-style="italic"/>
             <text variable="volume" prefix=" vol. " />
-            <date variable="issued" >
-              <date-part name="month" form="short" suffix=". "/>
-              <date-part name="year"/>
-            </date>
+	    <!--<date variable="issued" >-->
+	      <!--<date-part name="month" form="short" suffix=". "/>-->
+	      <!--<date-part name="year"/>-->
+	    <!--</date>-->
             <text macro="page"/>
           </group>
         </else>
