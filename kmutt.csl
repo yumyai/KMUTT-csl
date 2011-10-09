@@ -1,4 +1,5 @@
-<style xmlns="http://purl.org/net/xbiblio/csl" class="thesis" version="1.0" xml:lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" xml:lang="en">
   <info>
     <title>KMUTT_BETA</title>
     <id>http://www.zotero.org/styles/kmutt</id>
@@ -10,18 +11,19 @@
     <category term="engineering"/>
     <category term="generic-base"/>
     <category term="biology"/>
-    <updated>2011-08-23T06:35:40+00:00</updated>
+    <updated>2011-08-24T06:35:40+00:00</updated>
     <link href="manual for citation style is in pdf" rel="documentation"/>
   </info>
+
   <macro name="author">
     <names variable="author">
       <name name-as-sort-order="all" and="symbol" sort-separator=", " initialize-with="."
-        delimiter-precedes-last="never" delimiter=", "/>
-      <label form="short" prefix=" " suffix="." text-case="lowercase"/>
-      <substitute>
-        <names variable="editor"/>
-        <names variable="translator"/>
-      </substitute>
+        delimiter-precedes-last="always" delimiter=", "/>
+      <!--<label form="short" prefix=" " suffix="." text-case="lowercase"/>-->
+      <!--<substitute>-->
+        <!--<names variable="editor"/>-->
+        <!--<names variable="translator"/>-->
+      <!--</substitute>-->
     </names>
   </macro>
   <macro name="author-short">
@@ -147,10 +149,6 @@
             <text macro="title"/>
             <text variable="container-title" font-style="italic"/>
             <text variable="volume" prefix=" vol. " />
-	    <!--<date variable="issued" >-->
-	      <!--<date-part name="month" form="short" suffix=". "/>-->
-	      <!--<date-part name="year"/>-->
-	    <!--</date>-->
             <text macro="page"/>
           </group>
         </else>
