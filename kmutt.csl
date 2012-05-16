@@ -14,21 +14,19 @@
     <updated>2011-08-24T06:35:40+00:00</updated>
     <link href="manual for citation style is in pdf" rel="documentation"/>
   </info>
-
   <macro name="author">
     <names variable="author">
-      <name name-as-sort-order="all" and="symbol" sort-separator=", " initialize-with="."
-        delimiter-precedes-last="always" delimiter=", "/>
+      <name name-as-sort-order="all" and="symbol" sort-separator=", " initialize-with="." delimiter-precedes-last="always" delimiter=", "/>
       <!--<label form="short" prefix=" " suffix="." text-case="lowercase"/>-->
       <!--<substitute>-->
-        <!--<names variable="editor"/>-->
-        <!--<names variable="translator"/>-->
+      <!--<names variable="editor"/>-->
+      <!--<names variable="translator"/>-->
       <!--</substitute>-->
     </names>
   </macro>
   <macro name="author-short">
     <names variable="author">
-      <name form="short" and="text" delimiter=", " initialize-with="" />
+      <name form="short" and="text" delimiter=", " initialize-with=""/>
       <substitute>
         <names variable="editor"/>
         <names variable="translator"/>
@@ -67,7 +65,7 @@
         <text variable="title" font-style="italic"/>
       </if>
       <else>
-        <text variable="title" prefix='"' suffix='"'/>
+        <text variable="title" prefix="&quot;" suffix="&quot;"/>
       </else>
     </choose>
   </macro>
@@ -76,14 +74,13 @@
     <text variable="publisher" suffix=", "/>
     <!--<text macro="issued-year"/>-->
   </macro>
-  
   <macro name="access">
     <text variable="URL"/>
   </macro>
   <macro name="page">
-    <group> 
+    <group>
       <label variable="page" form="short" suffix=". "/>
-      <text variable="page" />
+      <text variable="page"/>
     </group>
   </macro>
   <citation collapse="year-suffix" et-al-min="3" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true">
@@ -94,7 +91,7 @@
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=", ">
         <text macro="author-short"/>
-	<text macro="issued-year"/>
+        <text macro="issued-year"/>
         <group>
           <label variable="locator" suffix="." form="short"/>
           <text variable="locator" prefix=" "/>
@@ -102,15 +99,15 @@
       </group>
     </layout>
   </citation>
-  <bibliography entry-spacing="1" hanging-indent="true" second-field-align="flush">
+  <bibliography entry-spacing="1" second-field-align="flush">
     <sort>
       <key macro="author"/>
       <key macro="issued-year" sort="ascending"/>
     </sort>
     <layout suffix=".">
-        <text variable="citation-number" suffix=". "/>
-        <text macro="author" suffix=", "/>
-	<text macro="issued-year" suffix=", "/>
+      <text variable="citation-number" suffix=". "/>
+      <text macro="author" suffix=", "/>
+      <text macro="issued-year" suffix=", "/>
       <choose>
         <if type="book">
           <group delimiter=", ">
@@ -119,11 +116,11 @@
           </group>
         </if>
         <else-if type="chapter">
-          <group delimiter=", "> 
+          <group delimiter=", ">
             <text macro="title"/>
             <text variable="container-title" font-style="italic"/>
             <text macro="editor"/>
-            <text macro="publisher" />
+            <text macro="publisher"/>
             <text macro="page"/>
           </group>
         </else-if>
@@ -141,14 +138,14 @@
             <text macro="title"/>
             <text variable="genre"/>
             <text variable="publisher"/>
-	    <text macro="issued-year"/>
-          </group>   
+            <text macro="issued-year"/>
+          </group>
         </else-if>
         <else>
-          <group delimiter=", "> 
+          <group delimiter=", ">
             <text macro="title"/>
             <text variable="container-title" font-style="italic"/>
-            <text variable="volume" prefix=" vol. " />
+            <text variable="volume" prefix=" vol. "/>
             <text macro="page"/>
           </group>
         </else>
